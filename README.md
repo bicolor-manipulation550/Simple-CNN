@@ -8,6 +8,8 @@
 ![GitHub last commit](https://img.shields.io/github/last-commit/Vanya737/Simple-CNN)
 ![GitHub Repo stars](https://img.shields.io/github/stars/Vanya737/Simple-CNN)
 
+<img src="https://github.com/user-attachments/assets/5c105427-eead-4557-99a7-0976d9857208" width="600">
+
 </div>
 
 ## CIFAR-10
