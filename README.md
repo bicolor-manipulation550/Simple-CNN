@@ -2,9 +2,19 @@
 
 # Simple-CNN
 
+![GitHub License](https://img.shields.io/github/license/Vanya737/Simple-CNN)
+![GitHub Release](https://img.shields.io/github/v/release/Vanya737/Simple-CNN)
+![GitHub top language](https://img.shields.io/github/languages/top/Vanya737/Simple-CNN)
+![GitHub last commit](https://img.shields.io/github/last-commit/Vanya737/Simple-CNN)
+![GitHub Repo stars](https://img.shields.io/github/stars/Vanya737/Simple-CNN)
+
 </div>
 
 ## CIFAR-10
+
+![Static Badge](https://img.shields.io/badge/Information--data-gray)
+![Static Badge](https://img.shields.io/badge/CIFAR--10-white)
+![Static Badge](https://img.shields.io/badge/CNN-orange)
 
 Датасет CIFAR-10. Это один из самых популярных наборов данных для обучения нейросетей начального уровня.  
 
@@ -44,6 +54,10 @@ from tensorflow.keras import datasets
 <img src="https://github.com/user-attachments/assets/3dafc0a4-2ad6-4d19-b5f6-211d1feb8bd0" width="500">
 
 ## Архитектура CNN
+
+![Static Badge](https://img.shields.io/badge/Python-blue)
+![Static Badge](https://img.shields.io/badge/TensorFlow-orange)
+![Static Badge](https://img.shields.io/badge/Keras-red)
 
 | № | Слой (Тип) | Конфигурация / Параметры | Выходная форма | Назначение слоя |
 | :--- | :--- | :--- | :--- | :--- |
@@ -134,6 +148,10 @@ def plot_results(history, total_time):
 ```
 
 ## Результат
+
+![Static Badge](https://img.shields.io/badge/Accuracy-0.75-brightgreen)
+![Static Badge](https://img.shields.io/badge/Loss-0.71-orange)
+![Static Badge](https://img.shields.io/badge/Epochs-7-green)
 
 Вывод результата - предсказания осуществляется через библиотеку matplotlib
 
